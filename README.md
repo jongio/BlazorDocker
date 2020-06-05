@@ -1,4 +1,4 @@
-# Blazor Docker
+# Blazor Docker - How to Containerize Blazor WebAssembly Standalone, WebAssembly Hosted, and Blazor Server apps
 
 This repo contains working examples for containerizing Blazor applications.  There are three types of Blazor projects.
 
