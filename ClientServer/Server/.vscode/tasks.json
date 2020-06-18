@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/Server/BlazorHosted.Server.csproj",
+                "${workspaceFolder}/ClientServer.Server.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/Server/BlazorHosted.Server.csproj",
+                "${workspaceFolder}/ClientServer.Server.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -32,7 +32,7 @@
             "args": [
                 "watch",
                 "run",
-                "${workspaceFolder}/Server/BlazorHosted.Server.csproj",
+                "${workspaceFolder}/ClientServer.Server.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -45,14 +45,14 @@
                 "build"
             ],
             "dockerBuild": {
-                "tag": "hosted:dev",
+                "tag": "server:dev",
                 "target": "base",
-                "dockerfile": "${workspaceFolder}/Server/Dockerfile",
+                "dockerfile": "${workspaceFolder}/Dockerfile",
                 "context": "${workspaceFolder}",
                 "pull": true
             },
             "netCore": {
-                "appProject": "${workspaceFolder}/Server/BlazorHosted.Server.csproj"
+                "appProject": "${workspaceFolder}/ClientServer.Server.csproj"
             }
         },
         {
@@ -62,13 +62,13 @@
                 "build"
             ],
             "dockerBuild": {
-                "tag": "hosted:latest",
-                "dockerfile": "${workspaceFolder}/Server/Dockerfile",
+                "tag": "server:latest",
+                "dockerfile": "${workspaceFolder}/Dockerfile",
                 "context": "${workspaceFolder}",
                 "pull": true
             },
             "netCore": {
-                "appProject": "${workspaceFolder}/Server/BlazorHosted.Server.csproj"
+                "appProject": "${workspaceFolder}/ClientServer.Server.csproj"
             }
         },
         {
@@ -79,7 +79,7 @@
             ],
             "dockerRun": {},
             "netCore": {
-                "appProject": "${workspaceFolder}/Server/BlazorHosted.Server.csproj",
+                "appProject": "${workspaceFolder}/ClientServer.Server.csproj",
                 "enableDebugging": true
             }
         },
@@ -91,7 +91,7 @@
             ],
             "dockerRun": {},
             "netCore": {
-                "appProject": "${workspaceFolder}/Server/BlazorHosted.Server.csproj"
+                "appProject": "${workspaceFolder}/ClientServer.Server.csproj"
             }
         }
     ]

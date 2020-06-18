@@ -10,7 +10,7 @@
             "request": "launch",
             "hosted": true,
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/Server/bin/Debug/netcoreapp3.1/BlazorHosted.Server.dll",
+            "program": "${workspaceFolder}/Server/bin/Debug/netcoreapp3.1/ClientServer.Server.dll",
             "cwd": "${workspaceFolder}/Server"
         }
     ]

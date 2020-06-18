@@ -8,5 +8,5 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - 6080:80
-      - 6443:443
+      - 7080:80
+      - 7443:443

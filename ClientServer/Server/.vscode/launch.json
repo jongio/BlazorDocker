@@ -9,7 +9,7 @@
         "type": "blazorwasm",
         "request": "launch",
         "hosted": true,
-        "program": "${workspaceFolder}/bin/Debug/netcoreapp3.1/BlazorHosted.Server.dll",
+        "program": "${workspaceFolder}/bin/Debug/netcoreapp3.1/ClientServer.Server.dll",
         "cwd": "${workspaceFolder}"
     },
     {
@@ -18,7 +18,7 @@
         "request": "launch",
         "preLaunchTask": "docker-run: debug",
         "netCore": {
-            "appProject": "${workspaceFolder}/BlazorHosted.Server.csproj"
+            "appProject": "${workspaceFolder}/ClientServer.Server.csproj"
         }
     }
 ]

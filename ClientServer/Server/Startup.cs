@@ -7,10 +7,12 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Linq;
 
-namespace BlazorHosted.Server
+namespace ClientServer.Server
 {
     public class Startup
     {
+        readonly string CorsOrigins = "CorsOrigins";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -25,6 +27,14 @@ namespace BlazorHosted.Server
 
             services.AddControllersWithViews();
             services.AddRazorPages();
+
+            services.AddCors(options =>
+           {
+               options.AddPolicy(CorsOrigins,
+                   builder => builder.AllowAnyOrigin()
+                   .AllowAnyMethod()
+                   .AllowAnyHeader());
+           });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,6 +57,8 @@ namespace BlazorHosted.Server
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            app.UseCors(CorsOrigins);
 
             app.UseEndpoints(endpoints =>
             {

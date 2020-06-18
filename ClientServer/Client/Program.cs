@@ -8,7 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace BlazorHosted.Client
+namespace ClientServer.Client
 {
     public class Program
     {
@@ -17,7 +17,11 @@ namespace BlazorHosted.Client
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
             builder.RootComponents.Add<App>("app");
 
-            builder.Services.AddTransient(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+            var serverHost = string.IsNullOrEmpty(builder.Configuration["SERVER_HOST"]) ?
+                builder.HostEnvironment.BaseAddress :
+                builder.Configuration["SERVER_HOST"];
+
+            builder.Services.AddTransient(sp => new HttpClient { BaseAddress = new Uri(serverHost) });
 
             await builder.Build().RunAsync();
         }
